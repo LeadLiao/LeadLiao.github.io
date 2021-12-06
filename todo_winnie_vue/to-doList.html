@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <script src="https://v1-cn.vuejs.org/js/vue.js"></script>
+    <title>To-do List</title>
+</head>
+
+<body>
+    <div class="lo root">
+        <div class="lo extend" :class="[slider? 'is-active': '']">
+            <div class="md menu-btn" v-on:click='toggle'>
+                <a class="btn" href="#">三</a>
+            </div>
+            <div class="md list">
+                <ul>
+                    <li><a href="#">生活</a></li>
+                    <li><a href="#">工作</a></li>
+                    <li><a href="#">家庭</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lo wrapper">
+            <div class="g undo">
+                <h1 class="md caption">生活</h1>
+                <div class="md todo-list">
+                    <ul>
+                        <li  v-for="item in notYet" :key="item.sn" >
+                            <article class="md article">
+                                <input type="checkbox"   v-model="item.done" >
+                                <div class="caption">{{item.caption}}</div>
+                                <div class=label>{{item.time}}</div>
+                                <div class="md control-list">
+                                    <ul>
+                                        <li class='edit'><a href="#">修改</a></li>
+                                        <li class='remove'><a href="#"  v-on:click="removeFunc(item)">刪除</a></li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+
+            <div class="g done">
+                <div class="title_done" >{{finishTitle}}</div>
+                <div class="md todo-list">
+                    <ul>
+                        <li  v-for="item in done" >
+                            <article class="md article">
+                                <input type="checkbox" v-model="item.done" >
+                                <div class="caption">{{item.caption}}</div>
+                                <div class=label>{{item.time}}</div>
+                                <div class="md control-list">
+                                    <ul>
+                                        <li class='edit'><a href="#">修改</a></li>
+                                        <li class='remove' ><a href="#" @click="removeFunc(item)">刪除</a></li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

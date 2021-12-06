@@ -1,0 +1,173 @@
+html {
+  font-size: 18px;
+  --extend-size: 260px;
+  --extend-color: #036fc2;
+  /* rgba(65,150, 225,.9)  */
+  /*  */
+}
+
+body {
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* div */
+.lo.root {
+  background-color: #086;
+}
+
+/* div */
+.lo.extend {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--extend-size);
+  background-color: var(--extend-color);
+  transition: 300ms;
+}
+
+.lo.extend.is-active {
+  left: calc(-1 * var(--extend-size));
+}
+
+.lo.extend.is-active + .lo.wrapper {
+  left: 0;
+}
+
+/* div */
+.lo.extend .md.menu-btn {
+  position: absolute;
+  top: 10px;
+  left: 100%;
+  margin-left: 10px;
+  z-index: 1;
+}
+
+.lo.extend .md.menu-btn a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--extend-color);
+  border-radius: 10px;
+  transition: 300ms;
+}
+
+.lo.extend .md.menu-btn a:hover {
+  opacity: 0.7;
+}
+
+/* div */
+.md.list {
+  padding-top: 10px;
+  margin: 20px 0px 0px 0px;
+}
+
+/* li */
+.md.list li {
+  height: 60px;
+  background-color: transparent;
+  line-height: 70px;
+}
+
+.md.list li + li {
+  border-top: 1px solid #0063b8;
+}
+
+/* a */
+.md.list li a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 0px 20px;
+  width: var(--extend-size);
+}
+
+.md.list li:hover {
+  background-color: #0063b8;
+  transition: 150ms;
+}
+
+/* div */
+.lo.wrapper {
+  position: absolute;
+  left: var(--extend-size);
+  right: 0;
+  bottom: 0;
+  top: 0;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+  transition: 300ms;
+}
+
+/* h1 */
+.md.caption {
+  color: #005088;
+  margin: 30px 0px 0px 30px;
+  font-weight: 400;
+}
+
+/* article */
+.md.article {
+  background-color: #fff;
+  border-radius: 10px;
+  display: block;
+  margin: 0px 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+input + div {
+  flex: 1;
+  margin-left: 25px;
+}
+
+.lo.wrapper article:hover {
+  box-shadow: 0 0 6px gray;
+  transition: 150ms;
+}
+
+/* div */
+.md.todo-list {
+  margin-top: 20px;
+}
+
+/* div */
+.md.control-list {
+  font-size: 16px;
+}
+
+.md.control-list li {
+  display: inline;
+  padding: 10px;
+  cursor: pointer;
+  line-height: 22px;
+}
+
+/* a */
+.md.control-list a {
+  text-decoration: none;
+}
+
+.md.todo-list li + li {
+  margin-top: 20px;
+}
+
+/* div */
+.title_done {
+  margin: 25px 30px;
+  font-weight: 100;
+  font-size: 22px;
+}
